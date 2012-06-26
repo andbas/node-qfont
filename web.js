@@ -2,7 +2,9 @@ var express = require('express'),
     app = express.createServer(express.logger()),
     format = require('util').format,
     fs = require('fs'),
-    dropbox  = require("dbox").app({"app_key": process.env['app_key'], "app_secret": process.env['app_secret'] }),
+	app_key = process.env['app_key'],
+	app_secret = process.env['app_secret'],
+    dropbox  = require("dbox").app({"app_key": app_key, "app_secret": app_secret }),
     client = dropbox.createClient({oauth_token_secret: process.env['oauth_token_secret'], oauth_token: process.env['oauth_token'], uid: process.env['uid']});
 
 app.set('views', __dirname + '/views');
