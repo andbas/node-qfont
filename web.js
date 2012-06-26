@@ -1,3 +1,4 @@
+console.log(process.env['app_key']);
 var express = require('express'),
     app = express.createServer(express.logger()),
     format = require('util').format,
