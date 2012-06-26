@@ -1,12 +1,9 @@
-console.log(process.env['app_key']);
 var express = require('express'),
     app = express.createServer(express.logger()),
     format = require('util').format,
     fs = require('fs'),
-	app_key = process.env['app_key'],
-	app_secret = process.env['app_secret'],
-    dropbox  = require("dbox").app({"app_key": app_key, "app_secret": app_secret }),
-    client = dropbox.createClient({oauth_token_secret: process.env['oauth_token_secret'], oauth_token: process.env['oauth_token'], uid: process.env['uid']});
+    dropbox  = require("dbox").app({"app_key": process.env['dbox_app_key'], "app_secret": process.env['dbox_app_secret'] }),
+    client = dropbox.createClient({oauth_token_secret: process.env['dbox_oauth_token_secret'], oauth_token: process.env['dbox_oauth_token'], uid: process.env['dbox_uid']});
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
