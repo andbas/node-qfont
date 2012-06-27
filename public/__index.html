@@ -25,7 +25,8 @@
             <br />
             <p>
               <form id="upload-form" action="/fonts/add" method="POST">
-                <input id="file-input" type="file" style="display: none;" onchange="document.getElementById('upload-form').submit();"/>
+                <input id="file-input" type="file" style="opacity: 0;" onchange="document.getElementById('upload-form').submit();"/>
+				<br />
                 <a class="btn btn-primary btn-large" onclick="document.getElementById('file-input').click();">
                   Upload your font
                 </a>
