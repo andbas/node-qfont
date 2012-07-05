@@ -9,7 +9,6 @@ ask('App key', /^\S+$/, function(app_key) {
       if(request_token){
         console.log('Please visit ', request_token.authorize_url, ' to authorize your app.');
         ask('Is this done? (yes)', /^yes$/, function(answer) {
-
           app.access_token(request_token, function(status, access_token){
             console.log('app_key: ' + app_key);
             console.log('app_secret: ' + app_secret);

@@ -1,11 +1,10 @@
 var express = require('express'),
     app = express.createServer(express.logger()),
-    format = require('util').format,
     fs = require('fs'),
     dropbox  = require("dbox").app({"app_key": process.env['dbox_app_key'], "app_secret": process.env['dbox_app_secret'] }),
     client = dropbox.createClient({oauth_token_secret: process.env['dbox_oauth_token_secret'], oauth_token: process.env['dbox_oauth_token'], uid: process.env['dbox_uid']});
 
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/views'); 
 app.set('view engine', 'jade');
 app.set('view options', { layout: false });
 app.use(express.bodyParser());
